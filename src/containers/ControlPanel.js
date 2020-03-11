@@ -157,11 +157,20 @@ function ControlPanel () {
           key="swarmIcon"
         /> */}
         <div
-          className='icon flaticon-prohibition35'
           onClick={() => sessionStore.logout()}
-          style={{ ...uiStore.theme }}
-          key='disconnectIcon'
-        />
+          style={Object.assign({
+            height: "100%",
+            position: "relative",
+          }, { ...uiStore.theme })}
+        >
+          <div style={{
+            position: "absolute",
+            top: "50%",
+            transform: "translateY(-50%) translateX(-50%)",
+          }}>
+            <button style={{ border: "none", backgroundColor: "rgb(32, 32, 32)", color: "rgb(196, 196, 196)", cursor: "pointer" }}>Change name</button>
+          </div>
+        </div>
       </div>
     )
   }
