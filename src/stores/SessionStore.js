@@ -53,7 +53,17 @@ export default class SessionStore {
 
   _readUserFromCache () {
     const username = cookies.getCookie(cookieKey)
-    return username ? { username } : null
+
+    if (username) {
+      return { username };
+    }
+
+    // Auto-login user with a randomly generated name. This makes it so new users see the live chat as soon as page loads, which is nice socially.
+    const newUser = {
+      username: `change-name-in-settings-👋-${Math.round(Math.random() * 1000)}`,
+    };
+    this._cacheUser(newUser);
+    return this._readUserFromCache();
   }
 
   _cacheUser (user) {
