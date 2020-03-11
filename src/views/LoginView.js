@@ -29,7 +29,7 @@ function LoginView () {
   const [next, setNext] = React.useState('/')
 
   React.useEffect(() => {
-    uiStore.setTitle('Login | Orbit')
+    uiStore.setTitle('Login | PredictIt Chat')
     uiStore.closeControlPanel()
   }, [])
 
@@ -59,9 +59,9 @@ function LoginView () {
 
   return useObserver(() =>
     !sessionStore.isAuthenticated ? (
-      <div className='LoginView'>
-        <h1 className='loginHeaderAnimation' onClick={focusUsernameInput}>
-          Orbit
+      <div className='LoginView' onClick={focusUsernameInput}>
+        <h1 onClick={focusUsernameInput}>
+          PredictIt dashboard chat
         </h1>
 
         <LoginForm
@@ -69,10 +69,6 @@ function LoginView () {
           onSubmit={handleSubmit}
           usernameInputRef={usernameInputRef}
         />
-        <div className='Version'>
-          {t('version')}: {version}
-        </div>
-        <BackgroundAnimation size={480} theme={{ ...uiStore.theme }} onClick={focusUsernameInput} />
       </div>
     ) : (
       <Redirect to={next} />

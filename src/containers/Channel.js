@@ -37,7 +37,7 @@ function Channel ({ channelName }) {
   function handleChannelNameChange () {
     setChannel(null)
 
-    uiStore.setTitle(`#${channelName} | Orbit`)
+    uiStore.setTitle(`#${channelName} | Chat`)
     uiStore.setCurrentChannelName(channelName)
 
     networkStore.joinChannel(channelName).then(channel => {

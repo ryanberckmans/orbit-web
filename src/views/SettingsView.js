@@ -23,7 +23,7 @@ function SettingsView () {
   const [t] = useTranslation()
 
   React.useEffect(() => {
-    uiStore.setTitle(`${t('viewNames.settings')} | Orbit`)
+    uiStore.setTitle(`${t('viewNames.settings')} | PredictIt Chat`)
   }, [])
 
   const handleChange = React.useCallback((event, field) => {

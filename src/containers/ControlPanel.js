@@ -175,19 +175,13 @@ function ControlPanel () {
           })}
         >
           <div style={{ opacity: 0.8, zIndex: -1 }}>
-            <BackgroundAnimation
-              size={320}
-              startY={58}
-              theme={{ ...uiStore.theme }}
-              style={{ alignItems: 'flex-start' }}
-            />
           </div>
 
           <div
             className={classNames('header bounceInAnimation', uiStore.sidePanelPosition)}
             onClick={handleClosePanel}
           >
-            <div className='logo'>Orbit</div>
+            <div className='logo'>PredictIt</div>
           </div>
 
           <div className='networkName fadeInAnimation' style={{ animationDuration: '1s' }}>
