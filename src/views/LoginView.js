@@ -50,9 +50,11 @@ function LoginView () {
     if (usernameInputRef.current) {
       const username = usernameInputRef.current.value.trim()
       if (username !== '') {
-        sessionStore.login({ username }).catch(e => {
-          logger.error(e)
-        })
+        sessionStore.login({ username })
+          .then(() => window.location.reload()) // there is a problem with an interaction somewhere in WorkerProxy or network.worker.js that causes `this` to become unbound when re-logging in during the same session. Instead we'll reload the page on login and the new username will be applied to the new session. The JavaScript error is "TypeError: Cannot read property 'sendMessage' of undefined at handleSendTextMessage (network.worker.js:123)"
+          .catch(e => {
+            logger.error(e)
+          });
       }
     }
   }, [])
