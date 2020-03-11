@@ -37,6 +37,7 @@ function MessageUserProfilePanel () {
         />
         <span className='close' onClick={handleClose} children='X' />
         {renderUserCard(t, uiStore.userProfilePanelUser)}
+        <span onClick={handleClose} children='X' style={{ cursor: "pointer" }} />
       </div>
     ) : null
   )
