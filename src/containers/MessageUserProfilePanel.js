@@ -30,11 +30,6 @@ function MessageUserProfilePanel () {
         className='MessageUserProfilePanel'
         style={calculatePanelStyle(uiStore.userProfilePanelPosition, uiStore.windowDimensions)}
       >
-        <BackgroundAnimation
-          style={{ top: '-30px', left: '-70px', zIndex: '-1', display: 'block' }}
-          size={256}
-          theme={{ ...uiStore.theme }}
-        />
         <span className='close' onClick={handleClose} children='X' />
         {renderUserCard(t, uiStore.userProfilePanelUser)}
         <span onClick={handleClose} children='X' style={{ cursor: "pointer" }} />
@@ -58,8 +53,6 @@ function renderUserCard (t, user) {
   const country = Countries[user.profile.location]
   return (
     <>
-      <img className='picture fadeInAnimation' src={earthImg} />
-
       <div className='name'>{user.profile.name}</div>
       <div className='country'>{country ? country + ', Earth' : 'Earth'}</div>
       <dl className='profileDataContainer'>
