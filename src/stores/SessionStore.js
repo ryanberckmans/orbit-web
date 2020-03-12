@@ -52,7 +52,7 @@ export default class SessionStore {
   // Private instance methods
 
   _readUserFromCache () {
-    const username = cookies.getCookie(cookieKey)
+    const username = window.localStorage ? window.localStorage.getItem(cookieKey) : cookies.getCookie(cookieKey);
 
     if (username) {
       return { username };
@@ -68,9 +68,11 @@ export default class SessionStore {
 
   _cacheUser (user) {
     if (user) {
-      cookies.setCookie(cookieKey, user.username, 1)
+      if (window.localStorage) window.localStorage.setItem(cookieKey, user.username);
+      else cookies.setCookie(cookieKey, user.username, 1);
     } else {
-      cookies.expireCookie(cookieKey)
+      if (window.localStorage) window.localStorage.removeItem(cookieKey);
+      else cookies.expireCookie(cookieKey);
     }
   }
 
