@@ -35,7 +35,7 @@
     "inputPlaceholder": "Join or Create Channel"
   },
   "login": {
-    "nickname": "Nickname",
+    "nickname": "New chat name",
     "orLoginWith": "Or login with",
     "pressEnterToLogin": "Press ENTER to login"
   },

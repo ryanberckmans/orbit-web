@@ -147,32 +147,36 @@ function ControlPanel () {
         <div
           className='icon flaticon-gear94'
           onClick={() => setRedirect('/settings')}
-          style={{ ...uiStore.theme }}
+          style={Object.assign({
+            cursor: "pointer",
+            width: "100%",
+            textAlign: "center",
+          }, { ...uiStore.theme })}
           key='settingsIcon'
-        />
+        >
+          Settings
+        </div>
         {/* <div
           className="icon flaticon-sharing7"
           // onClick={onOpenSwarmView}
           style={{ ...uiStore.theme }}
           key="swarmIcon"
-        /> */}
-        <div
-          onClick={() => sessionStore.logout()}
-          style={Object.assign({
-            height: "100%",
-            position: "relative",
-          }, { ...uiStore.theme })}
-        >
-          <div style={{
-            position: "absolute",
-            top: "50%",
-            transform: "translateY(-50%) translateX(-50%)",
-          }}>
-            <button style={{ border: "none", backgroundColor: "rgb(32, 32, 32)", color: "rgb(196, 196, 196)", cursor: "pointer" }}>Change name</button>
-          </div>
-        </div>
+        /> */}        
       </div>
     )
+  }
+
+  function renderChangeName() {
+    return <div
+      onClick={() => sessionStore.logout()}
+      style={Object.assign({        
+        cursor: "pointer",
+        textAlign: "center",
+        paddingTop: "1em",
+      }, { ...uiStore.theme })}
+    >      
+        <span className="glow">Change Chat Name</span>
+      </div>
   }
 
   return useObserver(() =>
@@ -190,14 +194,11 @@ function ControlPanel () {
             className={classNames('header bounceInAnimation', uiStore.sidePanelPosition)}
             onClick={handleClosePanel}
           >
-            <div className='logo'>PredictIt</div>
-          </div>
-
-          <div className='networkName fadeInAnimation' style={{ animationDuration: '1s' }}>
-            {networkStore.networkName}
+            <div className='logo'>2020 Election Chat</div>
           </div>
 
           <div className='username'>{sessionStore.username}</div>
+          {renderChangeName()}
 
           {renderJoinChannelInput()}
           {renderChannelsList()}

@@ -29,7 +29,7 @@ function LoginView () {
   const [next, setNext] = React.useState('/')
 
   React.useEffect(() => {
-    uiStore.setTitle('Login | PredictIt Chat')
+    uiStore.setTitle('Login | 2020 Election Chat')
     uiStore.closeControlPanel()
   }, [])
 
@@ -63,7 +63,7 @@ function LoginView () {
     !sessionStore.isAuthenticated ? (
       <div className='LoginView' onClick={focusUsernameInput}>
         <h1 onClick={focusUsernameInput}>
-          PredictIt dashboard chat
+          2020 Election Chat
         </h1>
 
         <LoginForm

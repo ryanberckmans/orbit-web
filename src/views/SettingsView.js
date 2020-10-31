@@ -23,7 +23,7 @@ function SettingsView () {
   const [t] = useTranslation()
 
   React.useEffect(() => {
-    uiStore.setTitle(`${t('viewNames.settings')} | PredictIt Chat`)
+    uiStore.setTitle(`${t('viewNames.settings')} | 2020 Election Chat`)
   }, [])
 
   const handleChange = React.useCallback((event, field) => {

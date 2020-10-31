@@ -46,7 +46,7 @@ export default class NetworkStore {
 
   // Public instance variables
 
-  networkName = window.location.href.match('localhost:') ? 'PredictIt Chat DEV Network' : 'PredictIt Chat Network'
+  networkName = window.location.href.match('localhost:') ? '2020 Election Chat' : '2020 Election Chat'
 
   @observable
   starting = false
@@ -68,7 +68,7 @@ export default class NetworkStore {
   swarmPeers = []
 
   @observable
-  defaultChannels = ["PredictIt"]
+  defaultChannels = ["general"]
 
   // Public instance getters
 

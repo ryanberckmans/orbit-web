@@ -11,7 +11,7 @@ function IndexView () {
   const { networkStore, uiStore } = React.useContext(RootContext)
 
   React.useEffect(() => {
-    uiStore.setTitle('PredictIt Chat')
+    uiStore.setTitle('2020 Election Chat')
   }, [])
 
   return useObserver(() =>
