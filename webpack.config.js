@@ -8,7 +8,7 @@ const config = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: './',
+    publicPath: '/orbit-web/',
     filename: '[name].[hash:20].js',
     globalObject: 'this'
   },
