@@ -68,7 +68,7 @@ export default class NetworkStore {
   swarmPeers = []
 
   @observable
-  defaultChannels = ["general"]
+  defaultChannels = ["2020-election-chat"]
 
   // Public instance getters
 
