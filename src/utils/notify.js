@@ -3,7 +3,7 @@ import debounce from 'lodash.debounce'
 import orbitLogo from '../images/orbit_logo_32x32.png'
 
 export function askPermission () {
-  Notification.requestPermission()
+  // Notification.requestPermission()
 }
 
 const notify = (title, body, tag) => {
@@ -15,7 +15,7 @@ const notify = (title, body, tag) => {
 
   if ('Notification' in window && Notification.permission === 'granted') {
     // eslint-disable-next-line no-new
-    new Notification(title, options)
+    // new Notification(title, options)
   }
 }
 
